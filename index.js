@@ -48,13 +48,18 @@ function generateHTML(repos) {
         <div class="group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
             <div>
                 <div class="flex justify-between items-start mb-3">
-                    <span class="text-xs font-bold px-2 py-1 bg-slate-100 text-slate-600 rounded-lg">${repo.lang}</span>
+                    <span class="text-xs font-bold px-2 py-1 bg-slate-100 text-slate-600 rounded-lg flex items-center">
+                       ${repo.lang}
+                    </span>
                     <span class="text-xs text-amber-500 font-medium flex items-center">
                         <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.481-.724-1.06-1.207-2.03zM12.12 15.12a3 3 0 10-4.24-4.24 3 3 0 004.24 4.24z" clip-rule="evenodd"></path></svg>
                         ${repo.starsToday}
                     </span>
                 </div>
-                <a href="${repo.link}" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors block">
+                <a href="${repo.link}" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors block flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-slate-600 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fill-rule="evenodd" d="${GITHUB_SVG_PATH}"></path>
+                    </svg>
                     ${repo.title}
                 </a>
                 <p class="text-slate-500 text-sm mt-3 line-clamp-3 leading-relaxed">
@@ -64,9 +69,6 @@ function generateHTML(repos) {
 
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
                 <a href="${repo.link}" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    <svg class="w-4 h-4 mr-1.5" viewBox="0 0 16 16" fill="currentColor">
-                        <path fill-rule="evenodd" d="${GITHUB_SVG_PATH}"></path>
-                    </svg>
                     查看项目
                     <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
@@ -89,7 +91,8 @@ function generateHTML(repos) {
             body { font-family: 'Inter', sans-serif; }
         </style>
     </head>
-    <body class="bg-[#F6F8FA] text-slate-900"> <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <body class="bg-[#F6F8FA] text-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
             <header class="mb-16 text-center">
                 <div class="flex justify-center items-center mb-4">
                     <svg height="48" width="48" viewBox="0 0 16 16" version="1.1" class="mr-4 text-slate-800 fill-current">
@@ -118,13 +121,11 @@ function generateHTML(repos) {
     </body>
     </html>`;
 
-    // 确保输出目录存在并写入文件
     const distDir = path.join(__dirname, 'public');
     if (!fs.existsSync(distDir)) fs.mkdirSync(distDir);
     fs.writeFileSync(path.join(distDir, 'index.html'), html);
 }
 
-// 主执行函数
 async function run() {
     console.log('正在获取 GitHub Trending 数据...');
     const repos = await fetchTrending();
@@ -135,7 +136,7 @@ async function run() {
         console.log('index.html 生成完成！');
     } else {
         console.error('未获取到数据，跳过页面生成。');
-        process.exit(1); // 抓取失败时让 Action 报错
+        process.exit(1);
     }
 }
 
