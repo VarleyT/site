@@ -12,10 +12,8 @@ async function fetchTrending() {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
                 'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
             },
-            timeout: 10000 // 设置 10 秒超时
+            timeout: 15000
         });
         const $ = cheerio.load(data);
         const repos = [];
@@ -27,17 +25,15 @@ async function fetchTrending() {
             const desc = $(el).find('p.my-1').text().trim() || 'No description provided.';
             const lang = $(el).find('[itemprop="programmingLanguage"]').text().trim() || 'Other';
 
-            // 提取今日 Star 数并转换为数字
             const starsTodayText = $(el).find('span.d-inline-block.float-sm-right').text().trim();
             const starCount = parseInt(starsTodayText.replace(/,/g, '').match(/\d+/) || 0);
 
             repos.push({ title, link, desc, lang, starsToday: starsTodayText, starCount });
         });
 
-        // 【修改点1】按 Star 数从高到低排序
         return repos.sort((a, b) => b.starCount - a.starCount);
     } catch (error) {
-        console.error('抓取失败:', error);
+        console.error('抓取失败:', error.message);
         return [];
     }
 }
@@ -45,20 +41,17 @@ async function fetchTrending() {
 function generateHTML(repos) {
     const now = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
 
-    // 【修改点2】统计每种语言的数量
     const langCounts = { "ALL": repos.length };
     repos.forEach(repo => {
         langCounts[repo.lang] = (langCounts[repo.lang] || 0) + 1;
     });
 
-    // 提取并按字母排序语言（排除 ALL）
     const sortedLangs = Object.keys(langCounts)
         .filter(l => l !== "ALL")
         .sort((a, b) => a.localeCompare(b));
 
     const finalLangList = ["ALL", ...sortedLangs];
 
-    // 【修改点3】生成带数字角标的筛选按钮
     const filterButtons = finalLangList.map(lang => `
         <button
             onclick="filterLang('${lang}')"
@@ -66,14 +59,19 @@ function generateHTML(repos) {
             class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
         >
             ${lang}
-            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400 group-active:bg-slate-200">
+            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
                 ${langCounts[lang]}
             </span>
         </button>
     `).join('');
 
     const cards = repos.map(repo => {
-        const langKey = repo.lang.toLowerCase().replace('typescript', 'ts').replace('shell', 'bash').replace('javascript', 'js');
+        const langKey = repo.lang.toLowerCase()
+            .replace('typescript', 'ts')
+            .replace('shell', 'bash')
+            .replace('javascript', 'js')
+            .replace('c++', 'cpp')
+            .replace('c#', 'cs');
         const langIcon = `https://skillicons.dev/icons?i=${langKey}`;
 
         return `
@@ -153,7 +151,6 @@ function generateHTML(repos) {
         </div>
 
         <script>
-            // 初始化 ALL 按钮样式
             document.querySelector('[data-nav-lang="ALL"]').classList.add('active');
 
             function filterLang(lang) {
@@ -189,7 +186,7 @@ async function run() {
     const repos = await fetchTrending();
     if (repos.length > 0) {
         generateHTML(repos);
-        console.log('页面已生成，按 Star 数降序排列。');
+        console.log('Success: Page generated with ' + repos.length + ' repos.');
     } else {
         process.exit(1);
     }
