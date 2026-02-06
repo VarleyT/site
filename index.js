@@ -8,7 +8,14 @@ const GITHUB_ICON_URL = "https://github.githubassets.com/favicons/favicon.svg";
 async function fetchTrending() {
     try {
         const { data } = await axios.get('https://github.com/trending', {
-            headers: { 'User-Agent': 'Mozilla/5.0' }
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+            },
+            timeout: 10000 // 设置 10 秒超时
         });
         const $ = cheerio.load(data);
         const repos = [];
@@ -19,12 +26,16 @@ async function fetchTrending() {
             const link = 'https://github.com' + titleTag.attr('href');
             const desc = $(el).find('p.my-1').text().trim() || 'No description provided.';
             const lang = $(el).find('[itemprop="programmingLanguage"]').text().trim() || 'Other';
-            const starsToday = $(el).find('span.d-inline-block.float-sm-right').text().trim();
 
-            repos.push({ title, link, desc, lang, starsToday });
+            // 提取今日 Star 数并转换为数字
+            const starsTodayText = $(el).find('span.d-inline-block.float-sm-right').text().trim();
+            const starCount = parseInt(starsTodayText.replace(/,/g, '').match(/\d+/) || 0);
+
+            repos.push({ title, link, desc, lang, starsToday: starsTodayText, starCount });
         });
 
-        return repos;
+        // 【修改点1】按 Star 数从高到低排序
+        return repos.sort((a, b) => b.starCount - a.starCount);
     } catch (error) {
         console.error('抓取失败:', error);
         return [];
@@ -34,22 +45,33 @@ async function fetchTrending() {
 function generateHTML(repos) {
     const now = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
 
-    // 1. 提取并排序语言
-    const uniqueLangs = [...new Set(repos.map(r => r.lang))].sort((a, b) => a.localeCompare(b));
-    const languages = ["ALL", ...uniqueLangs];
+    // 【修改点2】统计每种语言的数量
+    const langCounts = { "ALL": repos.length };
+    repos.forEach(repo => {
+        langCounts[repo.lang] = (langCounts[repo.lang] || 0) + 1;
+    });
 
-    // 2. 生成筛选按钮 HTML
-    const filterButtons = languages.map(lang => `
+    // 提取并按字母排序语言（排除 ALL）
+    const sortedLangs = Object.keys(langCounts)
+        .filter(l => l !== "ALL")
+        .sort((a, b) => a.localeCompare(b));
+
+    const finalLangList = ["ALL", ...sortedLangs];
+
+    // 【修改点3】生成带数字角标的筛选按钮
+    const filterButtons = finalLangList.map(lang => `
         <button
             onclick="filterLang('${lang}')"
             data-nav-lang="${lang}"
-            class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${lang === 'ALL' ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'}"
+            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
         >
             ${lang}
+            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400 group-active:bg-slate-200">
+                ${langCounts[lang]}
+            </span>
         </button>
     `).join('');
 
-    // 3. 生成项目卡片（添加 data-lang 属性）
     const cards = repos.map(repo => {
         const langKey = repo.lang.toLowerCase().replace('typescript', 'ts').replace('shell', 'bash').replace('javascript', 'js');
         const langIcon = `https://skillicons.dev/icons?i=${langKey}`;
@@ -76,7 +98,7 @@ function generateHTML(repos) {
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="${repo.link}" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors text-right">
+                <a href="${repo.link}" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
@@ -96,7 +118,8 @@ function generateHTML(repos) {
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
             body { font-family: 'Inter', sans-serif; }
-            .filter-btn.active { background-color: #1e293b; color: white; border-color: #1e293b; }
+            .filter-btn.active { background-color: #1e293b !important; color: white !important; border-color: #1e293b !important; }
+            .filter-btn.active span { background-color: rgba(255,255,255,0.2) !important; color: white !important; }
         </style>
     </head>
     <body class="bg-[#F6F8FA] text-slate-900">
@@ -108,7 +131,7 @@ function generateHTML(repos) {
                         Github Trending
                     </h1>
                 </div>
-                <p class="text-slate-500 font-medium text-lg">每日自动更新的热门开源项目预览</p>
+                <p class="text-slate-500 font-medium text-lg">每日 Star 增长最高项目排行</p>
                 <div class="inline-flex items-center mt-6 px-4 py-1.5 bg-white border border-slate-200 rounded-full text-xs text-slate-500 font-mono shadow-sm">
                     <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                     Update: ${now}
@@ -130,22 +153,21 @@ function generateHTML(repos) {
         </div>
 
         <script>
+            // 初始化 ALL 按钮样式
+            document.querySelector('[data-nav-lang="ALL"]').classList.add('active');
+
             function filterLang(lang) {
                 const cards = document.querySelectorAll('.repo-card');
                 const buttons = document.querySelectorAll('.filter-btn');
 
-                // 更新按钮样式
                 buttons.forEach(btn => {
                     if (btn.getAttribute('data-nav-lang') === lang) {
-                        btn.classList.add('bg-slate-800', 'text-white', 'border-slate-800');
-                        btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                        btn.classList.add('active');
                     } else {
-                        btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800');
-                        btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                        btn.classList.remove('active');
                     }
                 });
 
-                // 过滤卡片
                 cards.forEach(card => {
                     if (lang === 'ALL' || card.getAttribute('data-lang') === lang) {
                         card.style.display = 'flex';
@@ -164,11 +186,10 @@ function generateHTML(repos) {
 }
 
 async function run() {
-    console.log('正在获取数据...');
     const repos = await fetchTrending();
     if (repos.length > 0) {
         generateHTML(repos);
-        console.log('页面生成完成！');
+        console.log('页面已生成，按 Star 数降序排列。');
     } else {
         process.exit(1);
     }
