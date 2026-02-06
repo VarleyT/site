@@ -25,10 +25,11 @@ async function fetchTrending() {
             const desc = $(el).find('p.my-1').text().trim() || 'No description provided.';
             const lang = $(el).find('[itemprop="programmingLanguage"]').text().trim() || 'Other';
 
+            const starsTotal = $(el).find('a.Link--muted.d-inline-block.mr-3').first().text().trim();
             const starsTodayText = $(el).find('span.d-inline-block.float-sm-right').text().trim();
             const starCount = parseInt(starsTodayText.replace(/,/g, '').match(/\d+/) || 0);
 
-            repos.push({ title, link, desc, lang, starsToday: starsTodayText, starCount });
+            repos.push({ title, link, desc, lang, starsTotal, starsToday: starsTodayText, starCount });
         });
 
         return repos.sort((a, b) => b.starCount - a.starCount);
@@ -52,18 +53,29 @@ function generateHTML(repos) {
 
     const finalLangList = ["ALL", ...sortedLangs];
 
-    const filterButtons = finalLangList.map(lang => `
+    const filterButtons = finalLangList.map(lang => {
+        const langKey = lang.toLowerCase()
+            .replace('typescript', 'ts')
+            .replace('shell', 'bash')
+            .replace('javascript', 'js')
+            .replace('c++', 'cpp')
+            .replace('c#', 'cs');
+        const langIcon = lang === 'ALL' ? GITHUB_ICON_URL : `https://skillicons.dev/icons?i=${langKey}`;
+
+        return `
         <button
             onclick="filterLang('${lang}')"
             data-nav-lang="${lang}"
             class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
         >
+            <img src="${langIcon}" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
             ${lang}
             <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
                 ${langCounts[lang]}
             </span>
         </button>
-    `).join('');
+        `;
+    }).join('');
 
     const cards = repos.map(repo => {
         const langKey = repo.lang.toLowerCase()
@@ -82,10 +94,15 @@ function generateHTML(repos) {
                         <img src="${langIcon}" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="${repo.lang}" onerror="this.style.display='none'">
                         ${repo.lang}
                     </span>
-                    <span class="text-xs text-amber-500 font-medium flex items-center">
-                        <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        ${repo.starsToday}
-                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: ${repo.starsTotal}
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            ${repo.starsToday}
+                        </span>
+                    </div>
                 </div>
                 <a href="${repo.link}" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="${GITHUB_ICON_URL}" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
@@ -129,7 +146,7 @@ function generateHTML(repos) {
                         Github Trending
                     </h1>
                 </div>
-                <p class="text-slate-500 font-medium text-lg">每日 Star 增长最高项目排行</p>
+                <p class="text-slate-500 font-medium text-lg">每日热门项目实时看板</p>
                 <div class="inline-flex items-center mt-6 px-4 py-1.5 bg-white border border-slate-200 rounded-full text-xs text-slate-500 font-mono shadow-sm">
                     <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                     Update: ${now}
@@ -186,7 +203,7 @@ async function run() {
     const repos = await fetchTrending();
     if (repos.length > 0) {
         generateHTML(repos);
-        console.log('Success: Page generated with ' + repos.length + ' repos.');
+        console.log('Success: Page generated.');
     } else {
         process.exit(1);
     }
