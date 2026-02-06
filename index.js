@@ -3,7 +3,6 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
-// 使用你提供的 GitHub 图标网址
 const GITHUB_ICON_URL = "https://github.githubassets.com/favicons/favicon.svg";
 
 async function fetchTrending() {
@@ -19,7 +18,7 @@ async function fetchTrending() {
             const title = titleTag.text().trim().replace(/\s+/g, '');
             const link = 'https://github.com' + titleTag.attr('href');
             const desc = $(el).find('p.my-1').text().trim() || 'No description provided.';
-            const lang = $(el).find('[itemprop="programmingLanguage"]').text().trim() || 'Any';
+            const lang = $(el).find('[itemprop="programmingLanguage"]').text().trim() || 'Other';
             const starsToday = $(el).find('span.d-inline-block.float-sm-right').text().trim();
 
             repos.push({ title, link, desc, lang, starsToday });
@@ -35,14 +34,28 @@ async function fetchTrending() {
 function generateHTML(repos) {
     const now = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
 
+    // 1. 提取并排序语言
+    const uniqueLangs = [...new Set(repos.map(r => r.lang))].sort((a, b) => a.localeCompare(b));
+    const languages = ["ALL", ...uniqueLangs];
+
+    // 2. 生成筛选按钮 HTML
+    const filterButtons = languages.map(lang => `
+        <button
+            onclick="filterLang('${lang}')"
+            data-nav-lang="${lang}"
+            class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${lang === 'ALL' ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'}"
+        >
+            ${lang}
+        </button>
+    `).join('');
+
+    // 3. 生成项目卡片（添加 data-lang 属性）
     const cards = repos.map(repo => {
-        // 根据编程语言生成小图标 URL (使用 skillicons 服务)
-        // 映射一下常见别名确保图标显示
-        const langKey = repo.lang.toLowerCase().replace('typescript', 'ts').replace('shell', 'bash');
+        const langKey = repo.lang.toLowerCase().replace('typescript', 'ts').replace('shell', 'bash').replace('javascript', 'js');
         const langIcon = `https://skillicons.dev/icons?i=${langKey}`;
 
         return `
-        <div class="group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="${repo.lang}">
             <div>
                 <div class="flex justify-between items-start mb-4">
                     <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
@@ -62,11 +75,9 @@ function generateHTML(repos) {
                     ${repo.desc}
                 </p>
             </div>
-
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="${repo.link}" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目
-                    <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                <a href="${repo.link}" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors text-right">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
         </div>
@@ -85,11 +96,12 @@ function generateHTML(repos) {
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
             body { font-family: 'Inter', sans-serif; }
+            .filter-btn.active { background-color: #1e293b; color: white; border-color: #1e293b; }
         </style>
     </head>
     <body class="bg-[#F6F8FA] text-slate-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-            <header class="mb-16 text-center">
+            <header class="mb-8 text-center">
                 <div class="flex justify-center items-center mb-6">
                     <img src="${GITHUB_ICON_URL}" class="w-12 h-12 mr-4" alt="GitHub logo">
                     <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">
@@ -103,7 +115,11 @@ function generateHTML(repos) {
                 </div>
             </header>
 
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="flex flex-wrap justify-center gap-2 mb-12 max-w-4xl mx-auto">
+                ${filterButtons}
+            </div>
+
+            <div id="repo-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 ${cards}
             </div>
 
@@ -112,6 +128,33 @@ function generateHTML(repos) {
                 Powered by Node.js & GitHub Actions
             </footer>
         </div>
+
+        <script>
+            function filterLang(lang) {
+                const cards = document.querySelectorAll('.repo-card');
+                const buttons = document.querySelectorAll('.filter-btn');
+
+                // 更新按钮样式
+                buttons.forEach(btn => {
+                    if (btn.getAttribute('data-nav-lang') === lang) {
+                        btn.classList.add('bg-slate-800', 'text-white', 'border-slate-800');
+                        btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                    } else {
+                        btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800');
+                        btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                    }
+                });
+
+                // 过滤卡片
+                cards.forEach(card => {
+                    if (lang === 'ALL' || card.getAttribute('data-lang') === lang) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
     </body>
     </html>`;
 
@@ -121,11 +164,11 @@ function generateHTML(repos) {
 }
 
 async function run() {
-    console.log('正在获取 GitHub Trending 数据...');
+    console.log('正在获取数据...');
     const repos = await fetchTrending();
     if (repos.length > 0) {
         generateHTML(repos);
-        console.log('完成！');
+        console.log('页面生成完成！');
     } else {
         process.exit(1);
     }
