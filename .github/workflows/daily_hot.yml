@@ -4,6 +4,14 @@ on:
   schedule:
     - cron: '0 0 * * *' # 每天北京时间 8:00 运行
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    # 只有当指定文件修改时才触发，避免改个 README 也跑一遍脚本
+    paths:
+      - 'index.js'
+      - 'package.json'
+      - '.github/workflows/dailt_hot.yml'
 
 jobs:
   build-and-deploy:
