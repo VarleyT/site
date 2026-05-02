@@ -26,7 +26,7 @@
                 <p class="text-slate-500 font-medium text-lg">每日热门项目实时看板</p>
                 <div class="inline-flex items-center mt-6 px-4 py-1.5 bg-white border border-slate-200 rounded-full text-xs text-slate-500 font-mono shadow-sm">
                     <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                    Update: 2026/5/1 11:36:10
+                    Update: 2026/5/2 10:52:39
                 </div>
             </header>
 
@@ -40,7 +40,19 @@
             <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
             ALL
             <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                13
+                9
+            </span>
+        </button>
+        
+        <button
+            onclick="filterLang('Batchfile')"
+            data-nav-lang="Batchfile"
+            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
+        >
+            <img src="https://skillicons.dev/icons?i=batchfile" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
+            Batchfile
+            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
+                1
             </span>
         </button>
         
@@ -57,30 +69,6 @@
         </button>
         
         <button
-            onclick="filterLang('Kotlin')"
-            data-nav-lang="Kotlin"
-            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
-        >
-            <img src="https://skillicons.dev/icons?i=kotlin" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
-            Kotlin
-            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                1
-            </span>
-        </button>
-        
-        <button
-            onclick="filterLang('Other')"
-            data-nav-lang="Other"
-            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
-        >
-            <img src="https://skillicons.dev/icons?i=other" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
-            Other
-            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                1
-            </span>
-        </button>
-        
-        <button
             onclick="filterLang('Python')"
             data-nav-lang="Python"
             class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
@@ -88,7 +76,7 @@
             <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
             Python
             <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                4
+                2
             </span>
         </button>
         
@@ -128,54 +116,10 @@
             </span>
         </button>
         
-        <button
-            onclick="filterLang('Zig')"
-            data-nav-lang="Zig"
-            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
-        >
-            <img src="https://skillicons.dev/icons?i=zig" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
-            Zig
-            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                1
-            </span>
-        </button>
-        
             </div>
 
             <div id="repo-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Rust">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=rust" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Rust" onerror="this.style.display='none'">
-                        Rust
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            8,399 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/warpdotdev/warp" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">warpdotdev/warp</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Warp is an agentic development environment, born out of the terminal.
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/warpdotdev/warp" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
         <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Shell">
             <div>
                 <div class="flex justify-between items-start mb-4">
@@ -189,7 +133,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            6,187 stars today
+                            3,645 stars today
                         </span>
                     </div>
                 </div>
@@ -208,6 +152,38 @@
             </div>
         </div>
         
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Rust">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=rust" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Rust" onerror="this.style.display='none'">
+                        Rust
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            3,401 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/warpdotdev/warp" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">warpdotdev/warp</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    Warp is an agentic development environment, born out of the terminal.
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/warpdotdev/warp" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
         <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
             <div>
                 <div class="flex justify-between items-start mb-4">
@@ -221,7 +197,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            2,023 stars today
+                            2,112 stars today
                         </span>
                     </div>
                 </div>
@@ -253,7 +229,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            1,632 stars today
+                            1,096 stars today
                         </span>
                     </div>
                 </div>
@@ -285,39 +261,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            841 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/HunxByts/GhostTrack" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">HunxByts/GhostTrack</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Useful tool to track location or mobile number
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/HunxByts/GhostTrack" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
-                        Python
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            730 stars today
+                            535 stars today
                         </span>
                     </div>
                 </div>
@@ -349,7 +293,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            675 stars today
+                            403 stars today
                         </span>
                     </div>
                 </div>
@@ -368,12 +312,12 @@
             </div>
         </div>
         
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Zig">
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="JavaScript">
             <div>
                 <div class="flex justify-between items-start mb-4">
                     <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=zig" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Zig" onerror="this.style.display='none'">
-                        Zig
+                        <img src="https://skillicons.dev/icons?i=js" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="JavaScript" onerror="this.style.display='none'">
+                        JavaScript
                     </span>
                     <div class="flex flex-col items-end gap-1">
                         <span class="text-[10px] text-slate-400 font-medium flex items-center">
@@ -381,31 +325,31 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            341 stars today
+                            334 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/ghostty-org/ghostty" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/browserbase/skills" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">ghostty-org/ghostty</span>
+                    <span class="truncate">browserbase/skills</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
+                    Claude Agent SDK with a web browsing tool
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/ghostty-org/ghostty" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/browserbase/skills" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
         </div>
         
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Batchfile">
             <div>
                 <div class="flex justify-between items-start mb-4">
                     <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
-                        Python
+                        <img src="https://skillicons.dev/icons?i=batchfile" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Batchfile" onerror="this.style.display='none'">
+                        Batchfile
                     </span>
                     <div class="flex flex-col items-end gap-1">
                         <span class="text-[10px] text-slate-400 font-medium flex items-center">
@@ -413,20 +357,20 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            322 stars today
+                            145 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/public-apis/public-apis" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/Flowseal/zapret-discord-youtube" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">public-apis/public-apis</span>
+                    <span class="truncate">Flowseal/zapret-discord-youtube</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    A collective list of free APIs
+                    No description provided.
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/public-apis/public-apis" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/Flowseal/zapret-discord-youtube" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
@@ -445,116 +389,20 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            319 stars today
+                            56 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/lukilabs/craft-agents-oss" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/simstudioai/sim" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">lukilabs/craft-agents-oss</span>
+                    <span class="truncate">simstudioai/sim</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    No description provided.
+                    Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/lukilabs/craft-agents-oss" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Kotlin">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=kotlin" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Kotlin" onerror="this.style.display='none'">
-                        Kotlin
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            177 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/iamgio/quarkdown" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">iamgio/quarkdown</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    🪐 Markdown with superpowers: from ideas to papers, presentations, websites, books, and knowledge bases.
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/iamgio/quarkdown" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Other">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=other" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Other" onerror="this.style.display='none'">
-                        Other
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            140 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/ForrestKnight/open-source-cs" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">ForrestKnight/open-source-cs</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Video discussing this curriculum:
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/ForrestKnight/open-source-cs" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="JavaScript">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=js" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="JavaScript" onerror="this.style.display='none'">
-                        JavaScript
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            69 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/browserbase/skills" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">browserbase/skills</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Claude Agent SDK with a web browsing tool
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/browserbase/skills" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/simstudioai/sim" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
