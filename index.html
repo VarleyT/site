@@ -26,7 +26,7 @@
                 <p class="text-slate-500 font-medium text-lg">每日热门项目实时看板</p>
                 <div class="inline-flex items-center mt-6 px-4 py-1.5 bg-white border border-slate-200 rounded-full text-xs text-slate-500 font-mono shadow-sm">
                     <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                    Update: 2026/6/29 12:07:31
+                    Update: 2026/6/30 11:51:15
                 </div>
             </header>
 
@@ -40,7 +40,7 @@
             <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
             ALL
             <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                13
+                15
             </span>
         </button>
         
@@ -81,18 +81,6 @@
         </button>
         
         <button
-            onclick="filterLang('Other')"
-            data-nav-lang="Other"
-            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
-        >
-            <img src="https://skillicons.dev/icons?i=other" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
-            Other
-            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                1
-            </span>
-        </button>
-        
-        <button
             onclick="filterLang('Python')"
             data-nav-lang="Python"
             class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
@@ -100,7 +88,19 @@
             <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
             Python
             <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
-                8
+                7
+            </span>
+        </button>
+        
+        <button
+            onclick="filterLang('Shell')"
+            data-nav-lang="Shell"
+            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
+        >
+            <img src="https://skillicons.dev/icons?i=bash" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
+            Shell
+            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
+                2
             </span>
         </button>
         
@@ -116,106 +116,22 @@
             </span>
         </button>
         
+        <button
+            onclick="filterLang('TypeScript')"
+            data-nav-lang="TypeScript"
+            class="filter-btn relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center bg-white text-slate-600 border-slate-200 hover:border-slate-300"
+        >
+            <img src="https://skillicons.dev/icons?i=ts" class="w-3.5 h-3.5 mr-2 rounded-sm" alt="" onerror="this.style.display='none'">
+            TypeScript
+            <span class="ml-1.5 px-1.5 py-0.5 text-[10px] rounded-full bg-slate-100 text-slate-400">
+                2
+            </span>
+        </button>
+        
             </div>
 
             <div id="repo-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="C">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=c" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="C" onerror="this.style.display='none'">
-                        C
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            2,190 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">DeusData/codebase-memory-mcp</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
-                        Python
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            1,445 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/xbtlin/ai-berkshire" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">xbtlin/ai-berkshire</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-agent adversarial analysis.
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/xbtlin/ai-berkshire" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Haskell">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=haskell" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Haskell" onerror="this.style.display='none'">
-                        Haskell
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            1,180 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/simplex-chat/simplex-chat" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">simplex-chat/simplex-chat</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/simplex-chat/simplex-chat" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
         <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="HTML">
             <div>
                 <div class="flex justify-between items-start mb-4">
@@ -229,7 +145,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            495 stars today
+                            1,935 stars today
                         </span>
                     </div>
                 </div>
@@ -248,12 +164,12 @@
             </div>
         </div>
         
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Haskell">
             <div>
                 <div class="flex justify-between items-start mb-4">
                     <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
-                        Python
+                        <img src="https://skillicons.dev/icons?i=haskell" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Haskell" onerror="this.style.display='none'">
+                        Haskell
                     </span>
                     <div class="flex flex-col items-end gap-1">
                         <span class="text-[10px] text-slate-400 font-medium flex items-center">
@@ -261,20 +177,52 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            492 stars today
+                            1,607 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/simplex-chat/simplex-chat" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">HKUDS/Vibe-Trading</span>
+                    <span class="truncate">simplex-chat/simplex-chat</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    "Vibe-Trading: Your Personal Trading Agent"
+                    SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/simplex-chat/simplex-chat" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Shell">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=bash" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Shell" onerror="this.style.display='none'">
+                        Shell
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            1,425 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/msitarzewski/agency-agents" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">msitarzewski/agency-agents</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/msitarzewski/agency-agents" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
@@ -293,20 +241,20 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            380 stars today
+                            1,386 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/opendatalab/MinerU" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/xbtlin/ai-berkshire" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">opendatalab/MinerU</span>
+                    <span class="truncate">xbtlin/ai-berkshire</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.
+                    AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-agent adversarial analysis.
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/opendatalab/MinerU" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/xbtlin/ai-berkshire" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
@@ -325,135 +273,7 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            372 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/Robbyant/lingbot-map" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">Robbyant/lingbot-map</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    A feed-forward 3D foundation model for reconstructing scenes from streaming data
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/Robbyant/lingbot-map" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Swift">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=swift" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Swift" onerror="this.style.display='none'">
-                        Swift
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            365 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/altic-dev/FluidVoice" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">altic-dev/FluidVoice</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/altic-dev/FluidVoice" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
-                        Python
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            266 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/commaai/openpilot" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">commaai/openpilot</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/commaai/openpilot" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Other">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=other" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Other" onerror="this.style.display='none'">
-                        Other
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            250 stars today
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/ByteByteGoHq/system-design-101" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
-                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">ByteByteGoHq/system-design-101</span>
-                </a>
-                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Explain complex systems using visuals and simple terms. Help you prepare for system design interviews.
-                </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/ByteByteGoHq/system-design-101" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
-                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
-            <div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
-                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
-                        Python
-                    </span>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
-                            Total: 
-                        </span>
-                        <span class="text-xs text-amber-500 font-medium flex items-center">
-                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            196 stars today
+                            967 stars today
                         </span>
                     </div>
                 </div>
@@ -485,20 +305,52 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            174 stars today
+                            839 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/cupy/cupy" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">cupy/cupy</span>
+                    <span class="truncate">HKUDS/Vibe-Trading</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    NumPy & SciPy for GPU
+                    "Vibe-Trading: Your Personal Trading Agent"
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/cupy/cupy" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/HKUDS/Vibe-Trading" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Swift">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=swift" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Swift" onerror="this.style.display='none'">
+                        Swift
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            830 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/altic-dev/FluidVoice" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">altic-dev/FluidVoice</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/altic-dev/FluidVoice" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
@@ -517,20 +369,244 @@
                         </span>
                         <span class="text-xs text-amber-500 font-medium flex items-center">
                             <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            122 stars today
+                            458 stars today
                         </span>
                     </div>
                 </div>
-                <a href="https://github.com/usestrix/strix" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                <a href="https://github.com/commaai/openpilot" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
                     <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
-                    <span class="truncate">usestrix/strix</span>
+                    <span class="truncate">commaai/openpilot</span>
                 </a>
                 <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
-                    Open-source AI hackers to find and fix your app’s vulnerabilities.
+                    openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.
                 </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
-                <a href="https://github.com/usestrix/strix" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                <a href="https://github.com/commaai/openpilot" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
+                        Python
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            352 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/cupy/cupy" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">cupy/cupy</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    NumPy & SciPy for GPU
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/cupy/cupy" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Shell">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=bash" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Shell" onerror="this.style.display='none'">
+                        Shell
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            331 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/0xNyk/council-of-high-intelligence" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">0xNyk/council-of-high-intelligence</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    18 AI personas deliberate your hardest decisions across multiple LLM providers. Aristotle, Feynman, Kahneman, Torvalds & more — structured multi-round deliberation with genuine model diversity. One command: /council
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/0xNyk/council-of-high-intelligence" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="TypeScript">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=ts" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="TypeScript" onerror="this.style.display='none'">
+                        TypeScript
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            280 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/refactoringhq/tolaria" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">refactoringhq/tolaria</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    Desktop app to manage markdown knowledge bases
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/refactoringhq/tolaria" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
+                        Python
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            224 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/soxoj/maigret" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">soxoj/maigret</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/soxoj/maigret" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="C">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=c" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="C" onerror="this.style.display='none'">
+                        C
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            186 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/veracrypt/VeraCrypt" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">veracrypt/VeraCrypt</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    Disk encryption with strong security based on TrueCrypt
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/veracrypt/VeraCrypt" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="TypeScript">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=ts" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="TypeScript" onerror="this.style.display='none'">
+                        TypeScript
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            158 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/logto-io/logto" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">logto-io/logto</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    🧑‍🚀 Authentication and authorization infrastructure for SaaS and AI apps, built on OIDC and OAuth 2.1 with multi-tenancy, SSO, and RBAC.
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/logto-io/logto" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+                    查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="repo-card group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-lang="Python">
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center text-xs font-bold px-2.5 py-1 bg-slate-50 text-slate-600 rounded-lg border border-slate-100">
+                        <img src="https://skillicons.dev/icons?i=python" class="w-3.5 h-3.5 mr-1.5 rounded-sm" alt="Python" onerror="this.style.display='none'">
+                        Python
+                    </span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium flex items-center">
+                            Total: 
+                        </span>
+                        <span class="text-xs text-amber-500 font-medium flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            129 stars today
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/Unclecheng-li/VulnClaw" target="_blank" class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors flex items-center mb-3">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-5 h-5 mr-2.5 flex-shrink-0" alt="GitHub">
+                    <span class="truncate">Unclecheng-li/VulnClaw</span>
+                </a>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                    基于 AI Agent + MCP 工具链 + 渗透 Skill 编排， 配合大语言模型， 自然语言输入 → 自动完成「信息收集 → 漏洞发现 → 漏洞利用 → 报告生成」全流程。
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-50 flex justify-end">
+                <a href="https://github.com/Unclecheng-li/VulnClaw" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
                     查看项目 <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>
